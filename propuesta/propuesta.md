@@ -12,6 +12,7 @@ Entrega: Semana 7
 | Integrante 1 | Edward Hospina · 8-782-940 · edward.hospina@up.ac.pa |
 | Integrante 2 | Julieth Huerta · 8-1050-2149 · julieth-s.huerta-h@up.ac.pa |
 | Integrante 3 | Maria Gonzalez · 9-761-1980 · maria.gonzalez44@up.ac.pa |
+| Integrante 4 | Adriana Pineda · 2-757-2216 · adriana-h.pineda-r@up.ac.pa |
 
 ---
 
@@ -54,9 +55,10 @@ En la vida universitaria y profesional, es común manejar múltiples tareas al m
 
 | Integrante | Área de responsabilidad principal |
 |------------|-----------------------------------|
-| Edward Hospina | Implementación de la Pila (Undo/Redo) y la Lista Enlazada de tareas. |
+| Maria Gonzalez | Implementación de la Pila (Undo/Redo) y la Lista Enlazada de tareas. |
 | Julieth Huerta | Implementación del Árbol de categorías (BST) y búsqueda por categoría. |
-| Maria Gonzalez | Interfaz de usuario (menú por consola), integración de módulos y pruebas. |
+| Edward Hospina | Interfaz de usuario (menú por consola), integración de módulos y pruebas. |
+| Adriana Pineda | Apoyo en la lógica de la Pila y diseño de casos de prueba. |
 
 **Nota:** todos deben poder explicar todo el código. Los roles no implican que otros no participen en esa área.
 
@@ -89,3 +91,4 @@ Todos los integrantes firmantes declaran que:
 - Edward Hospina
 - Julieth Huerta
 - Maria Gonzalez
+- Adriana Pineda
