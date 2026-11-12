@@ -8,7 +8,7 @@ Entrega: Semana 10
 |-------|-------------|
 | Equipo | Team TaskFlow |
 | Tema | TaskFlow — Gestor de Tareas con Deshacer/Rehacer |
-| Commit de entrega | [Pega aquí el hash del commit cuando lo subas] |
+| Commit de entrega | [actualizar checkpoint 1 con los roles del equipo definitivo] |
 
 ---
 
@@ -43,8 +43,9 @@ La Lista Enlazada es el núcleo del sistema. El flujo de uso planeado es el sigu
 
 ## ¿Qué falta para el Checkpoint 2?
 
-- [ ] Terminar la integración de la Pila en el `main.py` (Julieth y Edward).
-- [ ] Crear la interfaz de menú por consola completa (Maria).
+- [ ] Terminar la integración de la Pila en el `main.py` (Maria y Adriana).
+- [ ] Crear la interfaz de menú por consola completa (Edward).
+- [ ] Implementar el Árbol BST para categorías (Julieth).
 - [ ] Escribir los casos de prueba en `src/tests/test_estructuras.py` que validen las operaciones de la lista y la pila.
 
 ---
@@ -69,5 +70,5 @@ Decidimos implementar nuestras propias estructuras de datos (Nodo y ListaEnlazad
 | ¿Usaron IA? | Sí |
 | Herramienta(s) | DeepSeek |
 | Para qué se usó | Apoyo para estructurar el código de la lista enlazada y revisar la lógica del manejo de casos borde (eliminación de la cabeza). |
-| Qué hizo el equipo por su cuenta | Definimos la arquitectura del sistema, creamos los repositorios y redactamos la propuesta. Edward implementó la lógica de la lista, Julieth y Maria revisaron los conceptos. |
+| Qué hizo el equipo por su cuenta | Definimos la arquitectura del sistema, creamos los repositorios y redactamos la propuesta. Edward implementó la lógica base de la lista, Maria y Adriana revisaron la integración, y Julieth estructuró el plan del BST. |
 | El equipo puede explicar todo el código | Sí |
