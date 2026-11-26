@@ -1,3 +1,24 @@
+"""
+Proyecto Final — TaskFlow: Gestor de Tareas con Deshacer/Rehacer
+INF 222 Estructura de Datos · Semestre 2026-2
+Equipo: Team TaskFlow
+Integrantes: Edward Hospina, Julieth Huerta, Maria Gonzalez, Adriana Pineda
+
+=============================================================
+DECLARACIÓN DE USO DE IA (ENTREGA FINAL)
+=============================================================
+Herramienta usada      : DeepSeek (modelo de chat)
+Para qué se usó        : Para comprender la integración de estructuras de datos
+                         (Lista Enlazada, Pila, Árbol BST) y como apoyo en la
+                         estructuración lógica del código base del sistema.
+Qué hice el equipo     : Diseñamos la arquitectura del sistema, implementamos los
+                         métodos de las estructuras, adaptamos las sugerencias de
+                         código a los requerimientos del proyecto, y ejecutamos las
+                         pruebas correspondientes.
+Puedo explicar todo    : Sí
+=============================================================
+"""
+
 import sys
 import os
 
@@ -147,7 +168,7 @@ def menu():
             app.mostrar_por_categorias()
             input("\nPresiona Enter para volver al menú...")
         elif opcion == "7":
-            print("¡Hasta luego! 👋")
+            print("¡Hasta luego! ")
             break
         else:
             print(" Opción inválida. Intenta de nuevo.")
