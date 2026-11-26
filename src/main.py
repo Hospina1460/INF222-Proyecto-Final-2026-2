@@ -13,28 +13,28 @@ class TaskFlow:
         self.tareas = ListaEnlazada()
         self.historial_undo = Pila()
         self.historial_redo = Pila()
-        self.arbol = ArbolCategorias() # <-- NUEVO: El Árbol BST
+        self.arbol = ArbolCategorias() # <-- El Árbol BST
 
     def agregar_tarea(self, titulo, categoria):
         self.tareas.insertar_final(titulo)
-        self.arbol.insertar(categoria, titulo) # <-- NUEVO: Se guarda en el árbol
+        self.arbol.insertar(categoria, titulo) # <-- Se guarda en el árbol
         self.historial_undo.push(("ADD", titulo, categoria)) # Guardamos también la categoría
         self.historial_redo = Pila()
-        print(f"✅ Tarea '{titulo}' agregada en la categoría '{categoria}'.")
+        print(f" Tarea '{titulo}' agregada en la categoría '{categoria}'.")
 
     def eliminar_tarea(self, titulo, categoria):
         if self.tareas.eliminar(titulo):
-            self.arbol.eliminar_tarea(categoria, titulo) # <-- NUEVO: Se elimina del árbol
+            self.arbol.eliminar_tarea(categoria, titulo) # <-- Se elimina del árbol
             self.historial_undo.push(("DEL", titulo, categoria))
             self.historial_redo = Pila()
-            print(f"🗑️ Tarea '{titulo}' eliminada.")
+            print(f" Tarea '{titulo}' eliminada.")
         else:
-            print(f"❌ No se encontró la tarea '{titulo}'.")
+            print(f" No se encontró la tarea '{titulo}'.")
 
     def deshacer(self):
         accion = self.historial_undo.pop()
         if accion is None:
-            print("⚠️ No hay acciones para deshacer.")
+            print(" No hay acciones para deshacer.")
             return
 
         tipo, titulo, categoria = accion
@@ -42,17 +42,17 @@ class TaskFlow:
             self.tareas.eliminar(titulo)
             self.arbol.eliminar_tarea(categoria, titulo)
             self.historial_redo.push(("ADD", titulo, categoria))
-            print(f"↩️ Deshecho: Se quitó '{titulo}'.")
+            print(f" Deshecho: Se quitó '{titulo}'.")
         elif tipo == "DEL":
             self.tareas.insertar_final(titulo)
             self.arbol.insertar(categoria, titulo)
             self.historial_redo.push(("DEL", titulo, categoria))
-            print(f"↩️ Deshecho: Se recuperó '{titulo}'.")
+            print(f" Deshecho: Se recuperó '{titulo}'.")
 
     def rehacer(self):
         accion = self.historial_redo.pop()
         if accion is None:
-            print("⚠️ No hay acciones para rehacer.")
+            print(" No hay acciones para rehacer.")
             return
 
         tipo, titulo, categoria = accion
@@ -60,19 +60,19 @@ class TaskFlow:
             self.tareas.insertar_final(titulo)
             self.arbol.insertar(categoria, titulo)
             self.historial_undo.push(("ADD", titulo, categoria))
-            print(f"↪️ Rehecho: Se volvió a agregar '{titulo}'.")
+            print(f" Rehecho: Se volvió a agregar '{titulo}'.")
         elif tipo == "DEL":
             self.tareas.eliminar(titulo)
             self.arbol.eliminar_tarea(categoria, titulo)
             self.historial_undo.push(("DEL", titulo, categoria))
-            print(f"↪️ Rehecho: Se volvió a eliminar '{titulo}'.")
+            print(f" Rehecho: Se volvió a eliminar '{titulo}'.")
 
     def mostrar_tareas(self):
         tareas = self.tareas.mostrar_todas()
         if not tareas:
-            print("\n📭 No hay tareas pendientes.")
+            print("\n No hay tareas pendientes.")
         else:
-            print("\n📋 TAREAS PENDIENTES:")
+            print("\n TAREAS PENDIENTES:")
             for i, t in enumerate(tareas, 1):
                 print(f"  {i}. {t}")
         print(f"Total: {self.tareas.tamanio()} tareas.")
@@ -80,14 +80,14 @@ class TaskFlow:
     def mostrar_por_categorias(self):
         """NUEVO: Muestra las tareas agrupadas usando el Árbol BST."""
         if self.arbol.raiz is None:
-            print("\n📭 El árbol de categorías está vacío.")
+            print("\n El árbol de categorías está vacío.")
             return
         
-        print("\n🌳 TAREAS POR CATEGORÍA (Recorrido Inorden):")
+        print("\n TAREAS POR CATEGORÍA (Recorrido Inorden):")
         categorias = self.arbol.mostrar_en_orden()
         for cat, tareas in categorias:
             if tareas: # Solo mostrar si tiene tareas
-                print(f"  📁 {cat}:")
+                print(f"   {cat}:")
                 for t in tareas:
                     print(f"      - {t}")
 
@@ -119,7 +119,7 @@ def menu():
         elif opcion == "3":
             tareas = app.tareas.mostrar_todas()
             if not tareas:
-                print("\n📭 No hay tareas para eliminar.")
+                print("\n No hay tareas para eliminar.")
             else:
                 app.mostrar_tareas()
                 try:
@@ -133,9 +133,9 @@ def menu():
                         categoria = input("Escribe la categoría de esa tarea (para borrarla del árbol): ")
                         app.eliminar_tarea(titulo, categoria)
                     else:
-                        print("❌ Número fuera de rango.")
+                        print(" Número fuera de rango.")
                 except ValueError:
-                    print("❌ Error: Debes escribir un número, no letras.")
+                    print(" Error: Debes escribir un número, no letras.")
             input("\nPresiona Enter para volver al menú...")
         elif opcion == "4":
             app.deshacer()
@@ -150,7 +150,7 @@ def menu():
             print("¡Hasta luego! 👋")
             break
         else:
-            print("❌ Opción inválida. Intenta de nuevo.")
+            print(" Opción inválida. Intenta de nuevo.")
 
 if __name__ == "__main__":
     menu()
